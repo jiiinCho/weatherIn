@@ -1,0 +1,17 @@
+# configuration files
+.**
+*.config.js
+/.git
+/.yarn
+**/*.json
+
+# packages
+**/*node_modules
+
+# test
+**/*.test.ts
+# build
+**/*build
+
+# type definition
+**/*.d.ts
