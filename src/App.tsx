@@ -63,7 +63,7 @@ function App() {
       <GlobalStyle />
       <Layout>
         <Header>
-          <a href="http://localhost:3000/">
+          <a href="https://weather-in.vercel.app/">
             <ScreenReader>Click to refresh page</ScreenReader>
             <Logo />
           </a>
