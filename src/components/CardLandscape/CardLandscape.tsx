@@ -15,7 +15,7 @@ interface CardLandscapeProps extends HTMLAttributes<HTMLDivElement> {
   title: string;
   content: string;
   unit: string;
-  backgroundColor: string;
+  cardbackground: string;
 }
 
 export const CardLandscape: FC<CardLandscapeProps> = ({
@@ -23,10 +23,10 @@ export const CardLandscape: FC<CardLandscapeProps> = ({
   content,
   title,
   unit,
-  backgroundColor,
+  cardbackground,
 }) => {
   return (
-    <StyledCardLandscape backgroundColor={backgroundColor}>
+    <StyledCardLandscape cardbackground={cardbackground}>
       <Container style={{ justifyContent: 'space-between' }}>
         <Icon icon={icon} size="xl" />
         <Paragraph>{title}</Paragraph>

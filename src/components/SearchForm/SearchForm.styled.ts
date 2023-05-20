@@ -35,14 +35,20 @@ export const Paragraph = styled(paragraphBase)`
 `;
 
 export const Label = styled.label`
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
 
   @media screen and (min-width: ${({
       theme: {
-        breakpoints: { lg },
+        breakpoints: { sm },
       },
-    }) => lg}) {
-    display: flex;
+    }) => sm}) {
     align-items: center;
+    flex-direction: row;
   }
+`;
+
+export const InputContainer = styled.div`
+  display: flex;
+  alignitems: center;
 `;

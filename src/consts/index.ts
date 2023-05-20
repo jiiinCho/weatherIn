@@ -6,4 +6,4 @@ export type {
   WeatherIconCode,
   CurrentWeather,
 } from './types';
-export { OPENMETEO_URL } from './url';
+export { OPENMETEO_URL, OPENWEATHER_URL } from './url';

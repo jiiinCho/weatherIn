@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 type CardLandscapeProps = {
-  backgroundColor: string;
+  cardbackground: string;
 };
 
 export const CardLandscape = styled.div<CardLandscapeProps>`
   flex: 1;
   padding: ${({ theme: { spacing } }) => `${spacing * 3}px`};
   border-radius: 8px;
-  background-color: ${(props) => props.backgroundColor};
+  background-color: ${(props) => props.cardbackground};
   border: ${({
     theme: {
       palette: { common },

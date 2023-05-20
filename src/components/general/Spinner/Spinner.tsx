@@ -1,13 +1,15 @@
-import { Player } from '@lottiefiles/react-lottie-player';
+import { FC } from 'react';
+import { Spinner as StyledSpinner } from './Spinner.styled';
 
-export const Spinner = () => {
-  return (
-    <Player
-      src="https://assets9.lottiefiles.com/packages/lf20_p8bfn5to.json"
-      className="player"
-      loop
-      autoplay
-      style={{ height: '180px', width: '180px' }}
-    />
-  );
+type SpinnerProps = {
+  height?: string;
+  width?: string;
+  borderthickness?: string;
+};
+export const Spinner: FC<SpinnerProps> = ({
+  height = '60px',
+  width = '60px',
+  borderthickness = '6px',
+}) => {
+  return <StyledSpinner height={height} width={width} borderthickness={borderthickness} />;
 };

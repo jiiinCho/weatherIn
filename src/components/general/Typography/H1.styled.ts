@@ -14,14 +14,14 @@ const H1Base = styled.h1(
 );
 
 export const H1 = styled(H1Base)`
-  font-size: 48px;
+  font-size: 40px;
 
   @media screen and (min-width: ${({
       theme: {
         breakpoints: { lg },
       },
     }) => lg}) {
-    font-size: 54px;
+    font-size: 48px;
   }
 
   @media screen and (min-width: ${({
@@ -29,6 +29,6 @@ export const H1 = styled(H1Base)`
         breakpoints: { xl },
       },
     }) => xl}) {
-    font-size: 64px;
+    font-size: 54px;
   }
 `;

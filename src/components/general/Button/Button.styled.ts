@@ -10,6 +10,8 @@ const ButtonBase = styled.button(
       },
     },
   }) => ({
+    minWidth: '120px',
+    minHeight: '44px',
     paddingTop: spacing,
     paddingBottom: spacing,
     paddingLeft: spacing * 2,
@@ -25,6 +27,7 @@ const ButtonBase = styled.button(
     borderColor: common.dark,
     cursor: 'pointer',
     margin: 0,
+    textAlign: 'center',
   }),
 );
 
@@ -57,4 +60,9 @@ export const Button = styled(ButtonBase)`
     padding-left: ${({ theme: { spacing } }) => spacing * 4}px;
     padding-right: ${({ theme: { spacing } }) => spacing * 4}px;
   }
+`;
+
+export const SpinnerContainer = styled.div`
+  display: flex;
+  justify-content: center;
 `;

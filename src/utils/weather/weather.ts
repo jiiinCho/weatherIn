@@ -18,23 +18,27 @@ export const getLineChartData = (response: OpenMeteoResponse, city: string): Lin
   return [{ id: city, color: theme.palette.base.primary, data: convertedXY }];
 };
 
-export const formatCurrentWeather = (response: OpenWeatherResponse): CurrentWeather => {
+export const formatCurrentWeather = (response: OpenWeatherResponse): CurrentWeather | null => {
+  if (!response) {
+    return null;
+  }
+
   const {
     main: { temp, humidity },
     weather,
     coord: { lon, lat },
     name,
     wind: { speed },
-  } = response.list[0];
+  } = response;
 
   const { description, icon } = weather[0]; // primary info refer to docs
-
+  const code = icon.substring(0, 2);
   return {
     latitude: lat.toString(),
     longitude: lon.toString(),
     city: name,
     temperature: kelvinToCelsius(temp),
-    icon,
+    icon: code,
     description,
     windSpeed: speed,
     humidity,

@@ -43,11 +43,11 @@ export const LineChart = () => {
       return;
     }
 
-    const errorMessage =
-      typeof errors === 'string' ? errors : 'Cannot fetch daily weather forecast';
-
+    const errorMessage = 'Cannot get weather forecast';
     toast.error(errorMessage, {
-      position: toast.POSITION.TOP_CENTER,
+      theme: 'colored',
+      type: 'error',
+      position: toast.POSITION.BOTTOM_RIGHT,
     });
   }, [errors]);
 

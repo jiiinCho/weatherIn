@@ -1,3 +1,4 @@
+import { Fragment, useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { ThemeProvider } from 'styled-components';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -19,16 +20,43 @@ import {
 } from './components';
 import { theme } from './theme';
 import GlobalStyle from './globalStyle';
-import { formatCurrentWeather } from './utils';
-import { currentWeather } from './utils/weather/mock';
-import { OpenWeatherResponse } from './consts';
+import { CurrentWeather } from './consts';
 
 function App() {
-  console.log('secret', process.env.REACT_APP_MY_ENV_VARIABLE);
+  const [weather, setWeather] = useState<CurrentWeather | undefined>(undefined);
 
-  const { temperature, icon, description, windSpeed, humidity } = formatCurrentWeather(
-    currentWeather as OpenWeatherResponse,
-  );
+  const renderContent = () => {
+    if (!weather) {
+      return null;
+    }
+
+    const { temperature, icon, description, windSpeed, humidity } = weather;
+
+    return (
+      <Fragment>
+        <Section>
+          <CardPortrait temperature={temperature} icon={icon} description={description} />
+          <LineChart />
+        </Section>
+        <Section>
+          <CardLandscape
+            icon="wind"
+            title="wind"
+            content={windSpeed.toString()}
+            unit="m/s"
+            cardbackground={theme.palette.base.tertiary}
+          />
+          <CardLandscape
+            icon="umbrella"
+            title="humidity"
+            content={humidity.toString()}
+            unit="%"
+            cardbackground={theme.palette.base.secondary}
+          />
+        </Section>
+      </Fragment>
+    );
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -42,28 +70,9 @@ function App() {
         </Header>
         <main style={{ gridColumn: '2/12' }}>
           <Section>
-            <SearchForm />
+            <SearchForm setWeather={setWeather} />
           </Section>
-          <Section>
-            <CardPortrait temperature={temperature} icon={icon} description={description} />
-            <LineChart />
-          </Section>
-          <Section>
-            <CardLandscape
-              icon="wind"
-              title="wind"
-              content={windSpeed.toString()}
-              unit="m/s"
-              backgroundColor={theme.palette.base.tertiary}
-            />
-            <CardLandscape
-              icon="umbrella"
-              title="humidity"
-              content={humidity.toString()}
-              unit="%"
-              backgroundColor={theme.palette.base.secondary}
-            />
-          </Section>
+          {renderContent()}
         </main>
         <Footer>
           <Small>&#169; jnch {new Date().getFullYear()}</Small>

@@ -14,20 +14,10 @@ export type LineChartDataT = {
   }[];
 };
 
-export const WeatherIconNames = [
-  '01d',
-  '02d',
-  '03d',
-  '04d',
-  '09d',
-  '10d',
-  '11d',
-  '13d',
-  '50d',
-] as const;
+export const WeatherIconNames = ['01', '02', '03', '04', '09', '10', '11', '13', '50'] as const;
 export type WeatherIconCode = (typeof WeatherIconNames)[number];
 
-type OpenWeatherList = {
+export type OpenWeatherResponse = {
   id: number;
   name: string;
   coord: { lat: number; lon: number };
@@ -44,10 +34,6 @@ type OpenWeatherList = {
     description: string;
     icon: WeatherIconCode;
   }[];
-};
-
-export type OpenWeatherResponse = {
-  list: OpenWeatherList[];
 };
 
 export type CurrentWeather = {
