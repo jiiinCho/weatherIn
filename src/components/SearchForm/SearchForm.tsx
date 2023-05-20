@@ -1,11 +1,10 @@
-import { Fragment } from 'react';
 import { H1, Input, Button } from '../general';
 
-import { Paragraph, Label } from './SearchForm.styled';
+import { Paragraph, Label, Container } from './SearchForm.styled';
 
 export const SearchForm = () => {
   return (
-    <Fragment>
+    <Container>
       <Paragraph>12:14 Tuesday, 19, 2023</Paragraph>
       <form>
         <Label htmlFor="city">
@@ -16,6 +15,6 @@ export const SearchForm = () => {
           </Button>
         </Label>
       </form>
-    </Fragment>
+    </Container>
   );
 };

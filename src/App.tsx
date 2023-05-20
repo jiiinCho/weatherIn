@@ -6,7 +6,6 @@ import { ToastContainer } from 'react-toastify';
 
 import {
   Small,
-  Icon,
   Layout,
   Header,
   Footer,
@@ -15,17 +14,21 @@ import {
   SearchForm,
   Section,
   CardPortrait,
+  LineChart,
+  CardLandscape,
 } from './components';
 import { theme } from './theme';
 import GlobalStyle from './globalStyle';
-import { KelvinToCelsius } from './utils/KelvinToCelsius';
-import { mock } from './consts/mock';
+import { formatCurrentWeather } from './utils';
+import { currentWeather } from './utils/weather/mock';
+import { OpenWeatherResponse } from './consts';
 
 function App() {
   console.log('secret', process.env.REACT_APP_MY_ENV_VARIABLE);
-  const temperature = KelvinToCelsius(mock.list[0].main.temp);
-  const icon = mock.list[0].weather[0].icon;
-  const description = mock.list[0].weather[0].description;
+
+  const { temperature, icon, description, windSpeed, humidity } = formatCurrentWeather(
+    currentWeather as OpenWeatherResponse,
+  );
 
   return (
     <ThemeProvider theme={theme}>
@@ -37,18 +40,30 @@ function App() {
             <Logo />
           </a>
         </Header>
-        <main style={{ gridColumn: '2/11' }}>
+        <main style={{ gridColumn: '2/12' }}>
           <Section>
             <SearchForm />
           </Section>
           <Section>
             <CardPortrait temperature={temperature} icon={icon} description={description} />
+            <LineChart />
           </Section>
-          <section style={{ margin: 'auto 0' }}>
-            <Icon icon="search" title="search" />
-            <Icon icon="wind" size="2x" />
-            <Icon icon="umbrella" size="3x" />
-          </section>
+          <Section>
+            <CardLandscape
+              icon="wind"
+              title="wind"
+              content={windSpeed.toString()}
+              unit="m/s"
+              backgroundColor={theme.palette.base.tertiary}
+            />
+            <CardLandscape
+              icon="umbrella"
+              title="humidity"
+              content={humidity.toString()}
+              unit="%"
+              backgroundColor={theme.palette.base.secondary}
+            />
+          </Section>
         </main>
         <Footer>
           <Small>&#169; jnch {new Date().getFullYear()}</Small>

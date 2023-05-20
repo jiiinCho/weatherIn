@@ -1,5 +1,4 @@
-const WeatherIconNames = ['01d', '02d', '03d', '04d', '09d', '10d', '11d', '13d', '50d'] as const;
-export type WeatherIconCode = (typeof WeatherIconNames)[number];
+import { WeatherIconNames, WeatherIconCode } from './types';
 
 export const isValidWeatherIcon = (iconCode: any): iconCode is WeatherIconCode => {
   return WeatherIconNames.includes(iconCode);

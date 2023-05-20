@@ -14,8 +14,11 @@ export {
   Logo,
   ScreenReader,
   Section,
+  Spinner,
+  Error,
 } from './general';
 
 export { SearchForm } from './SearchForm';
 export { CardLandscape } from './CardLandscape';
 export { CardPortrait } from './CardPortrait';
+export { LineChart } from './LineChart';

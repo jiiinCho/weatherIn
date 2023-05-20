@@ -8,3 +8,5 @@ export { Input } from './Input';
 export { Logo } from './Logo';
 export { ScreenReader } from './ScreenReader';
 export { Section } from './Section';
+export { Spinner } from './Spinner';
+export { Error } from './Error';
