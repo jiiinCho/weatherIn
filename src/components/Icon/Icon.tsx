@@ -1,17 +1,17 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconName } from '@fortawesome/fontawesome-svg-core';
-import styles from './Icon.module.css';
+import { Fragment } from 'react';
+import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 
-type IconProps = {
-  name: IconName;
+import { SrOnly } from './Icon.styled';
+
+interface IconProps extends FontAwesomeIconProps {
   title?: string;
-};
+}
 
-export const Icon = ({ name, title = '' }: IconProps) => {
+export const Icon = ({ title = '', ...args }: IconProps) => {
   return (
-    <div>
-      <FontAwesomeIcon icon={name} aria-hidden={!title} />
-      {title && <span style={styles.srOnly}>{title}</span>}
-    </div>
+    <Fragment>
+      <FontAwesomeIcon {...args} aria-hidden={!title} />
+      {title && <SrOnly>{title}</SrOnly>}
+    </Fragment>
   );
 };
