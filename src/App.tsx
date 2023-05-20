@@ -19,34 +19,10 @@ import {
 import { theme } from './theme';
 import GlobalStyle from './globalStyle';
 import { KelvinToCelsius } from './utils/KelvinToCelsius';
+import { mock } from './consts/mock';
 
 function App() {
   console.log('secret', process.env.REACT_APP_MY_ENV_VARIABLE);
-
-  const mock = {
-    message: 'accurate',
-    cod: '200',
-    count: 1,
-    list: [
-      {
-        id: 2643743,
-        name: 'London',
-        coord: { lat: 51.5085, lon: -0.1258 },
-        main: { temp: 280.15, pressure: 1012, humidity: 81, temp_min: 278.15, temp_max: 281.15 },
-        dt: 1485791400,
-        wind: { speed: 4.6, deg: 90 },
-        sys: { country: 'GB' },
-        rain: null,
-        snow: null,
-        clouds: { all: 90 },
-        weather: [
-          { id: 701, main: 'Mist', description: 'mist', icon: '50d' },
-          { id: 300, main: 'Drizzle', description: 'light intensity drizzle', icon: '09d' },
-        ],
-      },
-    ],
-  };
-
   const temperature = KelvinToCelsius(mock.list[0].main.temp);
   const icon = mock.list[0].weather[0].icon;
   const description = mock.list[0].weather[0].description;
