@@ -1,7 +1,7 @@
-import { ReactNode, FC, HTMLProps } from 'react';
+import { ReactNode, FC, HTMLAttributes } from 'react';
 import { Header as StyledHeader } from './Header.styled';
 
-interface HeaderProps extends HTMLProps<HTMLDivElement> {
+interface HeaderProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 

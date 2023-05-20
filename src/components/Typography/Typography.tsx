@@ -1,4 +1,4 @@
-import { ReactNode, FC, HTMLProps } from 'react';
+import { ReactNode, FC, ParamHTMLAttributes } from 'react';
 import { H1 as StyledH1 } from './H1.styled';
 import { H2 as StyledH2 } from './H2.styled';
 import { H3 as StyledH3 } from './H3.styled';
@@ -6,7 +6,7 @@ import { H4 as StyledH4 } from './H4.styled';
 import { Body as StyledBody } from './Body.styled';
 import { Small as StyledSmall } from './Small.styled';
 
-interface TypographyProps extends HTMLProps<HTMLHeadingElement> {
+interface TypographyProps extends ParamHTMLAttributes<HTMLHeadingElement> {
   children: ReactNode;
 }
 export const H1: FC<TypographyProps> = ({ children }) => {

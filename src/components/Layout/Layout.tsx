@@ -1,7 +1,7 @@
-import { ReactNode, FC, HTMLProps } from 'react';
+import { ReactNode, FC, HTMLAttributes } from 'react';
 import { Layout as StyledLayout } from './Layout.styled';
 
-interface LayoutProps extends HTMLProps<HTMLDivElement> {
+interface LayoutProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 

@@ -1,7 +1,7 @@
-import { ReactNode, FC, HTMLProps } from 'react';
+import { ReactNode, FC, HTMLAttributes } from 'react';
 import { Footer as StyledFooter } from './Footer.styled';
 
-interface FooterProps extends HTMLProps<HTMLDivElement> {
+interface FooterProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 
