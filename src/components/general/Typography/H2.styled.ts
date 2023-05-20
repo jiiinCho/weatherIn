@@ -10,5 +10,6 @@ export const H2 = styled.h2(
   }) => ({
     fontFamily,
     fontWeight,
+    fontSize: '56px',
   }),
 );
