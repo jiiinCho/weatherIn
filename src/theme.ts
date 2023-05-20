@@ -19,6 +19,7 @@ export const theme: DefaultTheme = {
     sm: '48em',
     md: '62em',
     lg: '75em',
+    xl: '87.5em',
   },
   spacing: 8,
 };

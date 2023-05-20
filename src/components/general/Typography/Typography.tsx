@@ -9,8 +9,8 @@ import { Small as StyledSmall } from './Small.styled';
 interface TypographyProps extends ParamHTMLAttributes<HTMLHeadingElement> {
   children: ReactNode;
 }
-export const H1: FC<TypographyProps> = ({ children }) => {
-  return <StyledH1>{children}</StyledH1>;
+export const H1: FC<TypographyProps> = ({ children, ...args }) => {
+  return <StyledH1 {...args}>{children}</StyledH1>;
 };
 
 export const H2: FC<TypographyProps> = ({ children }) => {

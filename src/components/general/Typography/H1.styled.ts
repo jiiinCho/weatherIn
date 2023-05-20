@@ -18,17 +18,17 @@ export const H1 = styled(H1Base)`
 
   @media screen and (min-width: ${({
       theme: {
-        breakpoints: { sm },
+        breakpoints: { lg },
       },
-    }) => sm}) {
+    }) => lg}) {
     font-size: 54px;
   }
 
   @media screen and (min-width: ${({
       theme: {
-        breakpoints: { lg },
+        breakpoints: { xl },
       },
-    }) => lg}) {
+    }) => xl}) {
     font-size: 64px;
   }
 `;
