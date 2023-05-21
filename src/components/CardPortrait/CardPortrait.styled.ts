@@ -16,6 +16,12 @@ export const Container = styled.div`
   text-align: center;
 `;
 
+export const CityContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const Temperature = styled.p(
   ({
     theme: {
@@ -53,4 +59,9 @@ export const Description = styled(DescriptionBase)`
     }) => lg}) {
     font-size: 24px;
   }
+`;
+
+export const City = styled(Description)`
+  font-size: 16px;
+  font-weight: 400;
 `;

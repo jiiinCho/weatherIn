@@ -30,12 +30,17 @@ function App() {
       return null;
     }
 
-    const { temperature, icon, description, windSpeed, humidity } = weather;
+    const { temperature, icon, description, windSpeed, humidity, city } = weather;
 
     return (
       <Fragment>
         <Section>
-          <CardPortrait temperature={temperature} icon={icon} description={description} />
+          <CardPortrait
+            city={city}
+            temperature={temperature}
+            icon={icon}
+            description={description}
+          />
           <LineChart />
         </Section>
         <Section>
