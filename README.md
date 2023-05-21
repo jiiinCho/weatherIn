@@ -1,4 +1,4 @@
-# 🌞 Weather In demo
+# 🌞 Weather In
 
 React + Typescript + Styled-Components weather web application bootstrapped with [Create React App](https://github.com/facebook/create-react-app) <br /> \*weather data is from [Open weather map](https://api.openweathermap.org) <br /><br />
 
