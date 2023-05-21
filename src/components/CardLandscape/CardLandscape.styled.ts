@@ -14,6 +14,17 @@ export const CardLandscape = styled.div<CardLandscapeProps>`
       palette: { common },
     },
   }) => `1px solid ${common.grey}`};
+
+  @media screen and (min-width: ${({
+      theme: {
+        breakpoints: { xl },
+      },
+    }) => xl}) {
+    display: flex;
+    flex-direction: column;
+    min-height: 220px;
+    justify-content: space-between;
+  }
 `;
 
 export const Container = styled.div`

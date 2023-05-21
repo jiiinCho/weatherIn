@@ -51,4 +51,14 @@ export const Label = styled.label`
 export const InputContainer = styled.div`
   display: flex;
   alignitems: center;
+  flex-direction: column;
+
+  @media screen and (min-width: ${({
+      theme: {
+        breakpoints: { sm },
+      },
+    }) => sm}) {
+    align-items: center;
+    flex-direction: row;
+  }
 `;

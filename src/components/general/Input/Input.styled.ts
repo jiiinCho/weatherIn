@@ -7,7 +7,7 @@ const InputBase = styled.input(
       palette: { common },
     },
   }) => ({
-    padding: spacing * 0.5,
+    padding: spacing,
     paddingLeft: spacing * 2,
     paddingRight: spacing * 2,
     borderRadius: spacing * 4,
@@ -21,15 +21,6 @@ const InputBase = styled.input(
 export const Input = styled(InputBase)`
   &:hover {
     border-style: dashed;
-  }
-
-  @media screen and (min-width: ${({
-      theme: {
-        breakpoints: { md },
-      },
-    }) => md}) {
-    padding-top: ${({ theme: { spacing } }) => spacing}px;
-    padding-bottom: ${({ theme: { spacing } }) => spacing}px;
   }
 
   @media screen and (min-width: ${({
