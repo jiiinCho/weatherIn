@@ -45,6 +45,7 @@ function App() {
             content={windSpeed.toString()}
             unit="m/s"
             cardbackground={theme.palette.base.tertiary}
+            screenreader="milliseconds"
           />
           <CardLandscape
             icon="umbrella"

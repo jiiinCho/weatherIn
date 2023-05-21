@@ -1,7 +1,7 @@
 import { FC, HTMLAttributes } from 'react';
 import { IconName } from '@fortawesome/free-solid-svg-icons';
 
-import { Icon } from 'components/general';
+import { Icon, ScreenReader } from 'components/general';
 
 import {
   CardLandscape as StyledCardLandscape,
@@ -16,6 +16,7 @@ interface CardLandscapeProps extends HTMLAttributes<HTMLDivElement> {
   content: string;
   unit: string;
   cardbackground: string;
+  screenreader?: string;
 }
 
 export const CardLandscape: FC<CardLandscapeProps> = ({
@@ -24,6 +25,7 @@ export const CardLandscape: FC<CardLandscapeProps> = ({
   title,
   unit,
   cardbackground,
+  screenreader = '',
 }) => {
   return (
     <StyledCardLandscape cardbackground={cardbackground}>
@@ -33,7 +35,8 @@ export const CardLandscape: FC<CardLandscapeProps> = ({
       </Container>
       <Container>
         <Content>{content}&nbsp;</Content>
-        <Paragraph>{unit}</Paragraph>
+        {screenreader && <ScreenReader>{screenreader}</ScreenReader>}
+        <Paragraph {...(screenreader && { 'aria-hidden': true })}>{unit}</Paragraph>
       </Container>
     </StyledCardLandscape>
   );

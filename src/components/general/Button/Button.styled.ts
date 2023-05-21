@@ -10,10 +10,9 @@ const ButtonBase = styled.button(
       },
     },
   }) => ({
-    minWidth: '120px',
-    minHeight: '44px',
-    paddingTop: spacing,
-    paddingBottom: spacing,
+    minWidth: '100px',
+    minHeight: '36px',
+    padding: spacing * 0.5,
     paddingLeft: spacing * 2,
     paddingRight: spacing * 2,
     backgroundColor: common.dark,
@@ -52,11 +51,20 @@ export const Button = styled(ButtonBase)`
 
   @media screen and (min-width: ${({
       theme: {
+        breakpoints: { md },
+      },
+    }) => md}) {
+    padding-top: ${({ theme: { spacing } }) => spacing}px;
+    padding-bottom: ${({ theme: { spacing } }) => spacing}px;
+  }
+
+  @media screen and (min-width: ${({
+      theme: {
         breakpoints: { lg },
       },
     }) => lg}) {
-    padding-top: ${({ theme: { spacing } }) => spacing * 2}px;
-    padding-bottom: ${({ theme: { spacing } }) => spacing * 2}px;
+    padding-top: ${({ theme: { spacing } }) => spacing}px;
+    padding-bottom: ${({ theme: { spacing } }) => spacing}px;
     padding-left: ${({ theme: { spacing } }) => spacing * 4}px;
     padding-right: ${({ theme: { spacing } }) => spacing * 4}px;
   }

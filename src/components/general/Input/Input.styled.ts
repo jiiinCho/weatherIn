@@ -7,8 +7,7 @@ const InputBase = styled.input(
       palette: { common },
     },
   }) => ({
-    paddingTop: spacing,
-    paddingBottom: spacing,
+    padding: spacing * 0.5,
     paddingLeft: spacing * 2,
     paddingRight: spacing * 2,
     borderRadius: spacing * 4,
@@ -26,12 +25,21 @@ export const Input = styled(InputBase)`
 
   @media screen and (min-width: ${({
       theme: {
+        breakpoints: { md },
+      },
+    }) => md}) {
+    padding-top: ${({ theme: { spacing } }) => spacing}px;
+    padding-bottom: ${({ theme: { spacing } }) => spacing}px;
+  }
+
+  @media screen and (min-width: ${({
+      theme: {
         breakpoints: { lg },
       },
     }) => lg}) {
-    padding-top: ${({ theme: { spacing } }) => spacing * 2}px;
-    padding-bottom: ${({ theme: { spacing } }) => spacing * 2}px;
-    padding-left: ${({ theme: { spacing } }) => spacing * 4}px;
-    padding-right: ${({ theme: { spacing } }) => spacing * 4}px;
+    padding-top: ${({ theme: { spacing } }) => spacing}px;
+    padding-bottom: ${({ theme: { spacing } }) => spacing}px;
+    padding-left: ${({ theme: { spacing } }) => spacing * 2}px;
+    padding-right: ${({ theme: { spacing } }) => spacing * 2}px;
   }
 `;

@@ -1,4 +1,4 @@
-import { OpenWeatherResponse } from 'consts';
+import { OpenWeatherResponse } from '../../consts';
 import { currentWeather, forecast } from './mock';
 import { getLineChartData, formatCurrentWeather, kelvinToCelsius } from './weather';
 
@@ -14,16 +14,16 @@ describe('getLineChartData', () => {
 
 describe('formatCurrentWeather', () => {
   it('should format weather data from open weather API', () => {
-    const { latitude, longitude, city, temperature, icon, description, windSpeed, humidity } =
-      formatCurrentWeather(currentWeather as OpenWeatherResponse);
+    const data = formatCurrentWeather(currentWeather as OpenWeatherResponse);
 
-    expect(latitude).toBe('51.5085');
-    expect(longitude).toBe('-0.1258');
-    expect(city).toBe('London');
-    expect(temperature).toBe(kelvinToCelsius(280.15));
-    expect(icon).toBe('50d');
-    expect(description).toBe('mist');
-    expect(windSpeed).toBe(4.6);
-    expect(humidity).toBe(81);
+    expect(data).not.toBeNull();
+    expect(data!.latitude).toBe('59.3326');
+    expect(data!.longitude).toBe('18.0649');
+    expect(data!.city).toBe('Stockholm');
+    expect(data!.temperature).toBe(kelvinToCelsius(285.92));
+    expect(data!.icon).toBe('04');
+    expect(data!.description).toBe('broken clouds');
+    expect(data!.windSpeed).toBe(1.54);
+    expect(data!.humidity).toBe(71);
   });
 });

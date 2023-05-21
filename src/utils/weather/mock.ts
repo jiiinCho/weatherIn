@@ -42,25 +42,24 @@ export const forecast = {
 };
 
 export const currentWeather = {
-  message: 'accurate',
-  cod: '200',
-  count: 1,
-  list: [
-    {
-      id: 2643743,
-      name: 'London',
-      coord: { lat: 51.5085, lon: -0.1258 },
-      main: { temp: 280.15, pressure: 1012, humidity: 81, temp_min: 278.15, temp_max: 281.15 },
-      dt: 1485791400,
-      wind: { speed: 4.6, deg: 90 },
-      sys: { country: 'GB' },
-      rain: null,
-      snow: null,
-      clouds: { all: 90 },
-      weather: [
-        { id: 701, main: 'Mist', description: 'mist', icon: '50d' },
-        { id: 300, main: 'Drizzle', description: 'light intensity drizzle', icon: '09d' },
-      ],
-    },
-  ],
+  coord: { lon: 18.0649, lat: 59.3326 },
+  weather: [{ id: 803, main: 'Clouds', description: 'broken clouds', icon: '04d' }],
+  base: 'stations',
+  main: {
+    temp: 285.92,
+    feels_like: 285.11,
+    temp_min: 285.01,
+    temp_max: 286.54,
+    pressure: 1026,
+    humidity: 71,
+  },
+  visibility: 10000,
+  wind: { speed: 1.54, deg: 110 },
+  clouds: { all: 75 },
+  dt: 1684648715,
+  sys: { type: 1, id: 1788, country: 'SE', sunrise: 1684634577, sunset: 1684697157 },
+  timezone: 7200,
+  id: 2673730,
+  name: 'Stockholm',
+  cod: 200,
 };

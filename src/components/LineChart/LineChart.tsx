@@ -7,7 +7,7 @@ import { getLineChartData } from 'utils';
 import { useFetch } from 'hook';
 
 import { Container } from './LineChart.styled';
-import { Error, Spinner } from '../general';
+import { Error, ScreenReader, Spinner } from '../general';
 
 export const LineChart = () => {
   // TODO
@@ -100,5 +100,10 @@ export const LineChart = () => {
     );
   };
 
-  return <Container>{renderContent()}</Container>;
+  return (
+    <Container>
+      <ScreenReader>Daily weather line chart</ScreenReader>
+      {renderContent()}
+    </Container>
+  );
 };

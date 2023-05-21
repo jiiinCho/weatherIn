@@ -70,6 +70,7 @@ export const SearchForm: FC<SearchFormProps> = ({ setWeather }) => {
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
     fetchCurrentWeather(city);
+    setCity('');
   };
 
   const hour = date.getHours() < 10 ? `0${date.getHours()}` : date.getHours();
@@ -78,7 +79,10 @@ export const SearchForm: FC<SearchFormProps> = ({ setWeather }) => {
   return (
     <Container>
       <Paragraph>
-        {hour}:{minutes} {today}
+        <time dateTime={`${hour}:${minutes}`}>
+          {hour}:{minutes}
+        </time>
+        &nbsp;{today}
       </Paragraph>
       <form style={{ display: 'flex' }} onSubmit={onSubmit}>
         <Label htmlFor="city">
@@ -92,7 +96,7 @@ export const SearchForm: FC<SearchFormProps> = ({ setWeather }) => {
               onChange={(event) => setCity(event.target.value)}
               value={city}
             />
-            <Button type="submit" style={{ margin: 'auto 4px' }} loading={loading}>
+            <Button type="submit" style={{ margin: 'auto 0' }} loading={loading}>
               Search
             </Button>
           </InputContainer>

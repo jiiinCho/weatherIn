@@ -1,12 +1,15 @@
 import { FC, HTMLAttributes } from 'react';
 import { Player } from '@lottiefiles/react-lottie-player';
+
+import { ScreenReader } from 'components/general';
+import { LottieWeatherSource, isValidWeatherIcon } from 'consts';
+
 import {
   CardPortrait as StyledCardPortrait,
   Container,
   Description,
   Temperature,
 } from './CardPortrait.styled';
-import { LottieWeatherSource, isValidWeatherIcon } from '../../consts';
 
 interface CardPortraitProps extends HTMLAttributes<HTMLDivElement> {
   temperature: number;
@@ -19,6 +22,7 @@ export const CardPortrait: FC<CardPortraitProps> = ({ temperature, icon, descrip
 
   return (
     <StyledCardPortrait>
+      <ScreenReader>Weather animated icon</ScreenReader>
       <Player
         src={LottieWeatherSource[weatherIcon]}
         className="player"
